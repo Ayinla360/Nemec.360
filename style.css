@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+header {
+  background-color: #006d3b; /* NEMEC green */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo span {
+  color: #d4af37; /* Market gold */
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+}
+
+.search-bar button {
+  background-color: #d4af37;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.departments {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.box {
+  background-color: #006d3b;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* Vendor box: use vendor image as background and hide the inline img */
+.box[data-dept="vendors"] {
+  background-color: transparent; /* allow background image to show */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.box[data-dept="vendors"] img { display: none; }
+.box[data-dept="vendors"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* dark gradient overlay plus vendor image for better contrast */
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('assets/vendor-icon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.box[data-dept="vendors"] .overlay {
+  position: relative;
+  z-index: 2;
+}
+.box[data-dept="vendors"] h3 {
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #006d3b;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* anchors inside nav */
+.bottom-nav a.nav-btn {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* ensure content isn't hidden behind the fixed bottom nav */
+body { padding-bottom: 64px; }
+
+/* labeled nav buttons: icon above label */
+.bottom-nav a.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+}
+.bottom-nav .nav-icon { font-size: 20px; line-height:1; }
+.bottom-nav .nav-label { font-size: 12px; color: #fff; }
+.bottom-nav a.nav-btn.active { background: rgba(255,255,255,0.06); border-radius: 8px; }
+/* ensure SVG icons inherit color and align nicely */
+.bottom-nav svg.nav-icon { display:block; fill: currentColor; }
+.bottom-nav a.nav-btn:focus { outline: 2px solid rgba(212,175,55,0.4); outline-offset: 2px; }

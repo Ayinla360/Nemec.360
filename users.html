@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registered Users - NEMEC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="results.css">
+</head>
+<body>
+  <header>
+    <h1>Registered Users</h1>
+  </header>
+  <main style="padding:16px;">
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+      <input id="userSearch" placeholder="Search by name, email, department" style="flex:1;padding:8px;border-radius:6px;border:1px solid #ddd">
+      <button id="refreshBtn" class="btn-elevated">Refresh</button>
+      <button id="loadServerBtn" class="btn-elevated" style="background:#0b74de">Load from server</button>
+      <input id="adminTokenInput" placeholder="Admin token" style="width:260px;padding:8px;border-radius:6px;border:1px solid #ddd">
+      <button id="setAdminTokenBtn" class="btn-elevated" style="background:#444">Set token</button>
+    </div>
+    <div style="margin-bottom:8px;color:#444">Total registered: <span id="userCount">0</span></div>
+    <div id="usersList" class="results-grid"></div>
+  </main>
+
+  <script src="users.js"></script>
+</body>
+</html>

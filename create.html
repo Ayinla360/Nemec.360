@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create Media Post - NEMEC</title>
+  <link rel="stylesheet" href="results.css">
+</head>
+<body>
+  <header>
+    <h2>Create Post</h2>
+    <a href="index.html" class="back-btn">⬅ Back</a>
+  </header>
+
+  <main>
+    <section class="create-area">
+      <form id="createForm" class="post-form">
+        <h3>New Media Post</h3>
+        <input type="text" id="title" placeholder="Title" required />
+        <textarea id="description" placeholder="Write a description..." rows="3" required></textarea>
+
+        <label for="deptSelect" class="small">Department</label>
+        <select id="deptSelect">
+          <option value="">Select department (optional)</option>
+          <option value="vendors">Vendors</option>
+          <option value="technicians">Technicians</option>
+          <option value="dealerships">Dealerships</option>
+          <option value="transportation">Transportation</option>
+        </select>
+
+        <label for="authorSelect" class="small">Author (optional)</label>
+        <select id="authorSelect">
+          <option value="">-- choose a registered profile --</option>
+        </select>
+
+        <div class="drop-zone" id="dropZone">Drop files here (image/video/audio) or use the pickers below</div>
+
+        <label class="small">Image (optional, max 5MB)</label>
+        <input type="file" id="imageInput" accept="image/*">
+
+        <label class="small">Video (optional, max 10MB)</label>
+        <input type="file" id="videoInput" accept="video/*">
+
+        <label class="small">Audio (optional, max 10MB)</label>
+        <input type="file" id="audioInput" accept="audio/*">
+
+  <label style="display:flex;align-items:center;gap:8px;margin-top:8px;"><input type="checkbox" id="attachLocation"> Attach my location to this post</label>
+
+        <label for="authorSelect" class="small">Author (optional)</label>
+        <select id="authorSelect">
+          <option value="">-- Select a registered profile --</option>
+        </select>
+
+        <div id="preview" class="media-preview"></div>
+
+        <div class="form-actions">
+          <button type="submit">Publish (local)</button>
+          <button type="button" id="exportBtn">Export Posts</button>
+          <input type="file" id="importInput" accept="application/json" style="display:none;">
+          <button type="button" id="importBtn">Import Posts</button>
+        </div>
+      </form>
+
+  <section id="feed" class="tiktok-feed"></section>
+    </section>
+  </main>
+
+  <script src="create.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

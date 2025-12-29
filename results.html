@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>NEMEC Market - Search Results</title>
+  <link rel="stylesheet" href="results.css">
+</head>
+<body>
+  <header>
+    <h2>Search Results</h2>
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <div class="results-controls" style="padding:12px 20px; display:flex; gap:8px; align-items:center;">
+      <label for="deptFilter">Filter:</label>
+      <select id="deptFilter">
+        <option value="">All departments</option>
+        <option value="vendors">Vendors</option>
+        <option value="technicians">Technicians</option>
+        <option value="dealerships">Dealerships</option>
+        <option value="transportation">Transportation</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:6px;">
+        <input type="checkbox" id="nearMe"> Nearest to me
+      </label>
+      <label for="nearRadius">Radius:</label>
+      <select id="nearRadius" title="Radius in km">
+        <option value="0">Any</option>
+        <option value="5">5 km</option>
+        <option value="20">20 km</option>
+        <option value="50">50 km</option>
+      </select>
+      <div id="geoStatus" style="font-size:12px;color:#666;">&nbsp;</div>
+      <div style="flex:1"></div>
+      <div id="resultsInfo" style="font-size:14px;color:#444"></div>
+    </div>
+
+    <div id="resultsContainer" class="results-grid"></div>
+  </main>
+  <!-- Fuse.js for fuzzy search -->
+  <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.min.js"></script>
+  <script src="results.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
